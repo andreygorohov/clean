@@ -1,0 +1,18 @@
+// @include tabs;
+// @include spoller;
+
+.btn {
+    display: inline-block;
+    max-width: 300px;
+    font-size: 16px;
+    // background-color: var(--red);
+    // color: #fff;
+    // padding: 12px 10px;
+    // border-radius: 4px;
+    transition: opacity 0.3s ease;
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

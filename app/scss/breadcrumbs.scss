@@ -1,0 +1,38 @@
+.breadcrumbs {
+    &__list {
+        display: flex;
+        li {
+            margin: 0px 40px 0px 0px;
+            &:last-child {
+                margin: 0px 0px 0px 0px;
+            }
+        }
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 19px;
+        color: #000000;
+        //opacity: 0.3;
+        position: relative;
+        &:after {
+            content: ">";
+            opacity: 1;
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            top: -1px;
+            right: -20px;
+        }
+    }
+
+    &__item {
+        font-size: 14px;
+        line-height: 19px;
+        color: #000000;
+        opacity: 0.3;
+    }
+    @media (max-width: $md3+px) {
+        padding: 0px 10px;
+    }
+}

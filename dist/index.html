@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Уберем</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="preload" href="fonts/TTTravels-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+    <div class=" wrapper">
+        <header class="header fix-block">
+    <div class="header__content container">
+        <a href="index.html" class="header__logo">
+            <picture>
+                <source srcset="img/logo.avif" type="image/avif">
+                <source srcset="img/logo.webp" type="image/webp">
+                <img loading="lazy" src="img/logo.png" alt="логотип">
+            </picture>
+        </a>
+        <div class="header__btns header-btns">
+            <button class="header-btns__btn header-btns__btn--home btn-reset header-btns__btn--active">Дом</button>
+            <button class="header-btns__btn header-btns__btn--office btn-reset ">Офис</button>
+        </div>
+        <nav class="menu header__menu ">
+            <ul class="menu__list list-reset">
+                <li class="menu__item"><a href="#" class="menu__link">После ремонта</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Генеральная уборка</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Регулярная уборка</a></li>
+                <li class="menu__item"><a href="#" class="menu__link">Мойка окон</a></li>
+            </ul>
+        </nav>
+        <a href="tel:380674016977" class="header__tel">+380 67 401 69 77</a>
+        <button class="burger btn-reset" aria-label="открыть меню"> </button>
+    </div>
+</header>
+        <main class="page">
+            <section class="hero">
+                <div class="container hero__content">
+                    <picture class="hero__photo">
+                        <source srcset="img/hero/hero.avif" type="image/avif">
+                        <source srcset="img/hero/hero.webp" type="image/webp">
+                        <img loading="lazy" src="img/hero/hero.jpg" alt="Фото">
+                    </picture>
+                    <div class="hero__info">
+                        <h1 class="hero__title">
+                            Уборка квартир в Киеве
+                        </h1>
+                        <p class="hero__text">
+                            Мы уберем у вас дома или в офисе. Наведем чистоту после ремонта и проведем генеральную
+                            уборку.
+                        </p>
+                        <div class="hero__order hero-order">
+                            <button class="hero-order__btn btn-reset"><span>Заказать уборку</span> </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="catalog">
+                <div class="container catalog__content">
+                    <h2 class="catalog__title visuallyhidden">Каталог</h2>
+                    <ul class="catalog__list catalog-list list-reset">
+                        <li class="catalog-list__item" data-aos="fade-up" data-aos-delay="100" data-aos-offset="100">
+                            <h3 class="catalog-list__title">
+                                Тщательно отобранный персонал
+                            </h3>
+                            <p class="catalog-list__info">
+                                Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние
+                                собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы
+                                можем сделать это эффективнее.
+                            </p>
+                            <picture class="catalog-list__photo">
+                                <source srcset="img/cards/01.avif" type="image/avif">
+                                <source srcset="img/cards/01.webp" type="image/webp">
+                                <img loading="lazy" src="img/cards/01.png" alt="Женщина">
+                            </picture>
+                        </li>
+                        <li class="catalog-list__item" data-aos="fade-up" data-aos-delay="200" data-aos-offset="100">
+                            <h3 class="catalog-list__title">Качественная эко-химия</h3>
+                            <p class="catalog-list__info">
+                                Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние
+                                собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы
+                                можем сделать это эффективнее.
+                            </p>
+                            <picture class="catalog-list__photo">
+                                <source srcset="img/cards/02.avif" type="image/avif">
+                                <source srcset="img/cards/02.webp" type="image/webp">
+                                <img loading="lazy" src="img/cards/02.png" alt="Химические средства">
+                            </picture>
+                        </li>
+                        <li class="catalog-list__item" data-aos="fade-up" data-aos-delay="300" data-aos-offset="100">
+                            <h3 class="catalog-list__title">Контролируем качество</h3>
+                            <p class="catalog-list__info">
+                                Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние
+                                собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы
+                                можем сделать это эффективнее.
+                            </p>
+                            <picture class="catalog-list__photo">
+                                <source srcset="img/cards/03.avif" type="image/avif">
+                                <source srcset="img/cards/03.webp" type="image/webp">
+                                <img loading="lazy" src="img/cards/03.png" alt="Женщина">
+                            </picture>
+                        </li>
+                        <li class="catalog-list__item" data-aos="fade-up" data-aos-delay="400" data-aos-offset="100">
+                            <h3 class="catalog-list__title">Работаем круглосуточно</h3>
+                            <p class="catalog-list__info">
+                                Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние
+                                собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы
+                                можем сделать это эффективнее.
+                            </p>
+                            <picture class="catalog-list__photo">
+                                <source srcset="img/cards/04.avif" type="image/avif">
+                                <source srcset="img/cards/04.webp" type="image/webp">
+                                <img loading="lazy" src="img/cards/04.png" alt="Телефон">
+                            </picture>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="clean">
+                <div class="container clean__content">
+                    <div class="clean__info">
+                        <h2 class="clean__title">Как мы убираем</h2>
+                        <p class="clean__text">
+                            Клинер приезжает в назначенное время со всем необходимым и сразу приступает к делу. Вам
+                            остаётся
+                            только оценить результат.
+                        </p>
+                    </div>
+                </div>
+                <ul class="clean__list clean-list list-reset ">
+                    <li>
+                        <h4 class="clean-list__title">Как мы убираем</h4>
+                    </li>
+                    <li class="clean-list__item"><button
+                            class="clean-list__btn clean-list__btn--active btn-reset"><span>→</span>
+                            Кухня</button>
+                    </li>
+                    <li class="clean-list__item"><button class="clean-list__btn btn-reset"><span>→</span>
+                            Комнаты</button></li>
+                    <li class="clean-list__item"><button class="clean-list__btn btn-reset"><span>→</span>
+                            Ванная</button></li>
+                    <li class="clean-list__item"><button class="clean-list__btn btn-reset"><span>→</span>
+                            Прихожая</button></li>
+                </ul>
+                <div class="clean__wrap">
+                    <div class="swiper clean-slider ">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="clean__photo">
+                                    <div class="tooltip-marker tooltip-marker-1">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-2">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-3">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-4">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-5">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-6">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-7">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <img loading="lazy" src="img/clean/02.jpg" alt="Кухня">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="clean__photo">
+                                    <div class="tooltip-marker tooltip-marker-8">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-9">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-10">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-11">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-12">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <img loading="lazy" src="img/clean/03.jpg" alt="Кухня">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="clean__photo">
+                                    <div class="tooltip-marker tooltip-marker-1">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-2">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-3">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-4">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-5">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-6">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-7">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <img loading="lazy" src="img/clean/02.jpg" alt="Кухня">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="clean__photo">
+                                    <div class="tooltip-marker tooltip-marker-8">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-9">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-10">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-11">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-marker tooltip-marker-12">
+                                        <span class="tooltip-marker__plus"></span>
+                                        <div class="tooltip">
+                                            <span class="tooltip__text">Открыть для просмотра</span>
+                                        </div>
+                                    </div>
+                                    <img loading="lazy" src="img/clean/03.jpg" alt="Кухня">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <script src="js/libs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

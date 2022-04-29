@@ -1,0 +1,16 @@
+@mixin font-face($font-family, $url, $weight) {
+    @font-face {
+        font-family: "#{$font-family}";
+        src: url("../fonts/#{$url}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-display: swap;
+        font-style: normal;
+    }
+}
+
+@include font-face("TTTravels-Light", "TTTravels-Light", 300);
+@include font-face("TTTravels-Regular", "TTTravels-Regular", 400);
+@include font-face("TTTravels-Medium", "TTTravels-Medium", 500);
+@include font-face("TTTravels-DemiBold", "TTTravels-DemiBold", 600);
+@include font-face("TTTravels-Bold", "TTTravels-Bold", 700);
+

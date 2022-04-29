@@ -1,0 +1,696 @@
+@mixin arrow {
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		transition: all 0.3s;
+		top: 50%;
+		width: var(--spoller-arrow-width);
+		height: var(--spoller-arrow-height);
+		background: var(--spoller-arrow-bg);
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
+}
+@mixin arrow-revers {
+	&:before {
+		transform: rotate(-45deg);
+	}
+	&:after {
+		transform: rotate(45deg);
+	}
+}
+@mixin marker {
+	position: relative;
+	padding: 0px 0px 0px 10px;
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+@mixin line {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		width: 0%;
+		height: 1px;
+		background-color: #000;
+		transition: width 0.3s ease, left 0.3s ease;
+		left: 50%;
+		bottom: 0;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			&:before {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+@mixin check-box {
+	.check-box {
+		display: block;
+		padding: 0px 0px 0px 20px;
+		position: relative;
+		cursor: pointer;
+		&__input {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+			width: 1px;
+			height: 1px;
+			left: 20px;
+			top: 0;
+			&:focus + .check-box__style {
+				&:after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					box-shadow: 0 0 5px 5px rgba(#000, 0.7);
+				}
+			}
+			&:checked + .check-box__style:before {
+				content: "";
+				width: 95%;
+				height: 95%;
+				background: url("../img/icons/check.svg") 0 0 / contain no-repeat;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		.check-box__style {
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			border: 2px solid #000;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+@mixin radio {
+	.radio {
+		display: block;
+		padding: 0px 0px 0px 25px;
+		position: relative;
+		cursor: pointer;
+		.radio__input {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+			&:focus + .radio__style {
+				&:after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					box-shadow: 0 0 5px 5px rgba(#000, 0.7);
+					border-radius: 50%;
+				}
+			}
+			&:checked + .radio__style:before {
+				content: "";
+				width: 10px;
+				height: 10px;
+				background: #000;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		&__style {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 20px;
+			height: 20px;
+			border: 2px solid #000;
+			border-radius: 50%;
+		}
+	}
+}
+@mixin tabs {
+	.tabs {
+		&__nav {
+			display: flex;
+		}
+
+		&__nav-item {
+		}
+
+		&__nav-btn {
+			&--active {
+			}
+			&:focus {
+			}
+		}
+		&__content {
+		}
+
+		&__panel {
+			display: none;
+			&--active {
+				display: block;
+			}
+		}
+	}
+}
+@mixin select {
+	.select {
+		border: 1px solid #000;
+		height: 40px;
+		position: relative;
+		transition: all 0.3s;
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			transition: all 0.3s;
+			top: 50%;
+			width: 15px;
+			height: 1px;
+			background: #000;
+		}
+		&:before {
+			right: 20px;
+			transform: rotate(45deg);
+		}
+		&:after {
+			right: 10px;
+			transform: rotate(-45deg);
+		}
+		&.active-sel {
+			&:before {
+				right: 20px;
+				transform: rotate(-45deg);
+			}
+			&:after {
+				right: 10px;
+				transform: rotate(45deg);
+			}
+		}
+		select {
+			background: none;
+			border: none;
+			appearance: none;
+			font-size: 14px;
+			line-height: 20px;
+			border-radius: 2px;
+			width: 100%;
+			height: 100%;
+			padding: 0px 30px;
+		}
+	}
+}
+@mixin spoller {
+	.spoller {
+		&__title {
+			position: relative;
+			transition: all 0.3s;
+			&--active {
+				color: red;
+				margin: 0px 0px 10px 0px;
+			}
+		}
+
+		&__content {
+			height: 0;
+			overflow: hidden;
+			transition: all 0.5s;
+		}
+	}
+}
+@mixin counter {
+	ul.counter {
+		counter-reset: item;
+		li {
+			position: relative;
+			padding: 0px 0px 0px 45px;
+			&:before {
+				counter-increment: item;
+				content: counter(item);
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			// &:nth-child(-n + 9) {
+			// 	&:before {
+			// 		counter-increment: item;
+			// 		content: "0" counter(item);
+			// 	}
+			// }
+		}
+	}
+}
+@mixin video {
+	.video {
+		position: relative;
+		overflow: hidden;
+		height: 0;
+		padding-bottom: 56.25%;
+		video,
+		iframe,
+		object,
+		embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+@mixin video-bg {
+	.videobg {
+		video,
+		iframe,
+		object,
+		embed {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: -100;
+			transform: translateX(-50%) translateY(-50%);
+			background-size: cover;
+		}
+	}
+}
+@mixin map {
+	#map {
+		background: url("../img/icons/loading.gif") center / 50px no-repeat;
+	}
+}
+@mixin quantity {
+	.quantity {
+		width: 88px;
+		height: 40px;
+		display: flex;
+		border: 1px solid rgba(166, 166, 166, 0.45);
+		// .quantity__button
+		&__button {
+			flex: 0 0 30px;
+			position: relative;
+			cursor: pointer;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transition: all 0.3s ease 0s;
+				margin: 0px 0px 0px -4.5px;
+				background-color: #a6a6a6;
+				width: 9px;
+				height: 1px;
+			}
+			@media (min-width: $md2+px) {
+				&:hover {
+					&::before,
+					&::after {
+						background-color: rgba(0, 0, 0, 0.5);
+					}
+				}
+			}
+			// .quantity__button_plus
+			&_plus {
+				&::before {
+					transform: rotate(-90deg);
+				}
+			}
+			// .quantity__button_minus
+			&_minus {
+			}
+		}
+		// .quantity__input
+		&__input {
+			flex: 1 1 auto;
+			input {
+				height: 100%;
+				color: #a6a6a6;
+				font-size: 12px;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
+@mixin dropdown {
+	.block {
+		position: relative;
+		width: 200px;
+		margin: 0px 0px 50px 0px;
+		// для пробела
+		&._active-link {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 100%;
+				height: 20px;
+				width: 100%;
+			}
+		}
+		button {
+			width: 200px;
+			height: 50px;
+			font-size: 18px;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0px 0px 0px 0px;
+			background: blue;
+		}
+		&__list {
+			position: absolute;
+			width: 200px;
+			top: 60px;
+			left: 0;
+			color: #fff;
+			background: #50c878;
+			transition: all 0.3s;
+			overflow: hidden;
+			max-width: 300px;
+			height: 0;
+			border: none;
+			padding: 0px 20px;
+			&._active-list {
+				padding: 20px;
+			}
+
+			li {
+				border: 1px solid red;
+			}
+		}
+	}
+}
+@mixin thanks {
+	position: absolute;
+	padding: 5px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	flex-direction: column;
+	color: #000;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 4;
+	text-align: center;
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@mixin sending {
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.3) url("../img/loading.gif") center/5% no-repeat;
+		border-radius: 4px;
+		opacity: 0;
+		visibility: hidden;
+	}
+	&.sending:after {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+// @mixin adaptiv-value($indentType, $pcSize, $mobSize, $maxSize) {
+// 	$addSize: $pcSize - $mobSize;
+// 	@if $maxSize==1 {
+// 		//Только если меньше контейнера
+// 		#{$indentType}: $pcSize + px;
+// 		@media (max-width: #{$maxWidthContainer + px}) {
+// 			#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+// 		}
+// 	} @else if $maxSize==2 {
+// 		//Только если больше контейнера
+// 		#{$indentType}: $pcSize + px;
+// 		@media (min-width: #{$maxWidthContainer + px}) {
+// 			#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+// 		}
+// 	} @else {
+// 		//Всегда
+// 		#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+// 	}
+// }
+
+// проценты
+// @function per($el, $par) {
+// 	@return #{$el / ($par * 0.01) + "%"};
+// }
+// @mixin image-set($pathToImage) {
+// 	background-image: url("#{$pathToImage}.jpg");
+// 	/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+// 	background-image: image-set(
+// 		/* stylelint-disable-next-line function-comma-newline-after */ "#{$pathToImage}.avif"type("image/avif"),
+// 		"#{$pathToImage}.webp"type("image/webp"),
+// 		"#{$pathToImage}.jpg"type("image/jpg")
+// 	);
+// }
+
+// //Percent
+// @function per($px, $from) {
+// 	$result: math.div($px, $from) * 100%;
+// 	@return $result;
+// }
+// //REM
+// @function rem($px) {
+// 	$result: math.div($px, 16) + rem;
+// 	@return $result;
+// }
+// //EM
+// @function em($px, $current: 16) {
+// 	$result: math.div($px, $current) + em;
+// 	@return $result;
+// }
+
+// // Адаптивное свойство (clamp)
+// @mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+// 	@if ($startSize==0) {
+// 		$startSize: 0.000001;
+// 	}
+// 	@if ($minSize==0) {
+// 		$minSize: 0.000001;
+// 	}
+
+// 	// Для calc();
+// 	$addSize: math.div($startSize - $minSize, 16);
+
+// 	@if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+// 		$widthFrom: $maxWidth;
+// 	}
+
+// 	// Брейк-поинты в EM
+// 	$widthFromMedia: em($widthFrom);
+// 	$widthToMedia: em($widthTo);
+
+// 	// Формула плавающего значения
+// 	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+// 	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+// 	$yIntersection: -$widthTo * $slope + $minSize;
+// 	@if ($yIntersection==0) {
+// 		$yIntersection: 0.000001;
+// 	}
+// 	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+
+// 	// Получение значения свойства
+// 	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+// 	// Если отрицательные значения
+// 	@if ($minSize > $startSize) {
+// 		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+// 	}
+
+// 	// Если поддерживается clamp();
+// 	@supports (#{$property}: $propertyValue) {
+// 		#{$property}: $propertyValue;
+// 	}
+// 	// Если не поддерживается clamp();
+// 	@supports not (#{$property}: $propertyValue) {
+// 		#{$property}: calc(
+// 			#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) -
+// 				math.div($widthTo, 16)}
+// 		);
+// 	}
+
+// 	// Устанавливаем значения по умолчанию
+// 	@if $widthFrom != $containerWidth and $widthFrom != $maxWidth and $keepSize != 1 and $keepSize != 2 {
+// 		@media (min-width: $widthFromMedia) {
+// 			#{$property}: inherit;
+// 		}
+// 	}
+// 	@if $widthTo != $minWidth and $keepSize != 1 and $keepSize != 3 {
+// 		@media (max-width: $widthToMedia) {
+// 			#{$property}: inherit;
+// 		}
+// 	}
+// }
+
+
+//Адаптивное свойство
+@mixin adaptiv-value($indentType, $pcSize, $mobSize, $maxSize) {
+	$addSize: $pcSize - $mobSize;
+	@if $maxSize==1 {
+		//Только если меньше контейнера
+		#{$indentType}: $pcSize + px;
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 650px) / #{$maxWidthContainer - 320}));
+		}
+	} @else if $maxSize==2 {
+		//Только если больше контейнера
+		#{$indentType}: $pcSize + px;
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+		}
+	} @else {
+		//Всегда
+		#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+	}
+}
+//Percent
+@function per($px, $from) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+// Адаптивное свойство (clamp)
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+	@if ($startSize==0) {
+		$startSize: 0.000001;
+	}
+	@if ($minSize==0) {
+		$minSize: 0.000001;
+	}
+
+	// Для calc();
+	$addSize: math.div($startSize - $minSize, 16);
+
+	@if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+		$widthFrom: $maxWidth;
+	}
+
+	// Брейк-поинты в EM
+	$widthFromMedia: em($widthFrom);
+	$widthToMedia: em($widthTo);
+
+	// Формула плавающего значения
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	@if ($yIntersection==0) {
+		$yIntersection: 0.000001;
+	}
+	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+
+	// Получение значения свойства
+	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+	// Если отрицательные значения
+	@if ($minSize > $startSize) {
+		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+	}
+
+	// Если поддерживается clamp();
+	@supports (#{$property}: $propertyValue) {
+		#{$property}: $propertyValue;
+	}
+	// Если не поддерживается clamp();
+	@supports not (#{$property}: $propertyValue) {
+		#{$property}: calc(
+			#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) -
+				math.div($widthTo, 16)}
+		);
+	}
+
+	// Устанавливаем значения по умолчанию
+	@if $widthFrom != $containerWidth and $widthFrom != $maxWidth and $keepSize != 1 and $keepSize != 2 {
+		@media (min-width: $widthFromMedia) {
+			#{$property}: inherit;
+		}
+	}
+	@if $widthTo != $minWidth and $keepSize != 1 and $keepSize != 3 {
+		@media (max-width: $widthToMedia) {
+			#{$property}: inherit;
+		}
+	}
+}
+
+// проценты
+@function per($el, $par) {
+	@return #{calc($el / ($par * 0.01)) + "%"};
+}
+@mixin image-set-png($pathToImage) {
+	background-image: url("#{$pathToImage}.png");
+	background-image: image-set(
+		"#{$pathToImage}.avif"type("image/avif"),
+		"#{$pathToImage}.webp"type("image/webp"),
+		"#{$pathToImage}.jpg"type("image/png")
+	);
+}
+@mixin image-set-jpg($pathToImage) {
+	background-image: url("#{$pathToImage}.jpg");
+	background-image: image-set(
+		"#{$pathToImage}.avif"type("image/avif"),
+		"#{$pathToImage}.webp"type("image/webp"),
+		"#{$pathToImage}.jpg"type("image/jpg")
+	);
+}

@@ -1,0 +1,43 @@
+.form {
+	background: #fff;
+	padding: 40px 20px 20px 20px;
+	margin: 100px 0px 0px 0px;
+	position: relative;
+
+	&__btn {
+		width: 100%;
+		padding: 10px 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		background: #000;
+	}
+}
+.form-field {
+	display: block;
+	&__input {
+		height: 30px;
+		border: 1px solid #000;
+		width: 100%;
+		display: block;
+		padding: 0px 0px 0px 10px;
+		display: block;
+		font-size: 16px;
+	}
+}
+.form-btn {
+	&:not(button:disabled) {
+		&:hover {
+		}
+	}
+	&:disabled {
+		background: #ccc !important;
+	}
+}
+// @include check-box;
+// @include radio;
+// @include quantity;
+// @include select;
+// @include thanks;
+// @include sending;
